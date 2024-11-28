@@ -6,9 +6,6 @@ orgs.newOrg('eclipsenebula') {
     description: "",
     name: "Eclipse Nebula Project",
     web_commit_signoff_required: false,
-    workflows+: {
-      default_workflow_permissions: "read",
-    },
   },
   webhooks+: [
     orgs.newOrgWebhook('https://ci.eclipse.org/nebula/github-webhook/') {
@@ -37,9 +34,6 @@ orgs.newOrg('eclipsenebula') {
       has_discussions: true,
       homepage: "https://eclipse.org/nebula",
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
     },
     orgs.newRepo('nebula-website') {
       allow_merge_commit: true,
