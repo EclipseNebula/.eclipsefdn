@@ -2,7 +2,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipsenebula') {
   settings+: {
-    blog: "http://eclipse.org/nebula",
+    blog: "https://eclipse.dev/nebula",
     description: "",
     name: "Eclipse Nebula Project",
     web_commit_signoff_required: false,
@@ -20,19 +20,12 @@ orgs.newOrg('eclipsenebula') {
     orgs.newRepo('nebula') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      code_scanning_default_languages+: [
-        "java-kotlin",
-        "javascript",
-        "javascript-typescript",
-        "typescript"
-      ],
-      code_scanning_default_setup_enabled: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Nebula Project",
       has_discussions: true,
-      homepage: "https://eclipse.org/nebula",
+      homepage: "https://eclipse.dev/nebula",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('nebula-website') {
