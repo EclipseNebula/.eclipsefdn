@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('EclipseNebula') {
+orgs.newOrg('technology.nebula', 'EclipseNebula') {
   settings+: {
     blog: "https://eclipse.dev/nebula",
     description: "",
