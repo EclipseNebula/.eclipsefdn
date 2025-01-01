@@ -7,6 +7,14 @@ orgs.newOrg('technology.nebula', 'EclipseNebula') {
     name: "Eclipse Nebula Project",
     web_commit_signoff_required: false,
   },
+  teams+: [
+    orgs.newTeam('Owners') {
+      members+: [
+        "wimjongman"
+      ],
+      privacy: "secret",
+    },
+  ],
   webhooks+: [
     orgs.newOrgWebhook('https://ci.eclipse.org/nebula/github-webhook/') {
       content_type: "json",
@@ -17,6 +25,8 @@ orgs.newOrg('technology.nebula', 'EclipseNebula') {
     },
   ],
   _repositories+:: [
+    orgs.newRepo('.github') {
+    },
     orgs.newRepo('nebula') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -38,10 +48,5 @@ orgs.newOrg('technology.nebula', 'EclipseNebula') {
         enabled: false,
       },
     },
-  ],
-} + {
-  # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
-  _repositories+:: [
-    orgs.newRepo('.github')
   ],
 }
